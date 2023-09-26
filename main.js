@@ -12,7 +12,7 @@ init();
 animate();
 
 const loader = new BVHLoader();
-loader.load("models/bvh/pirouette.bvh", function (result) {
+loader.load("models/bvh/001_Neutral_0_mirror_x_1_0.bvh", function (result) {
   const skeletonHelper = new THREE.SkeletonHelper(result.skeleton.bones[0]);
 
   scene.add(result.skeleton.bones[0]);

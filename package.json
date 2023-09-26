@@ -2,16 +2,52 @@
   "name": "gesture-generation",
   "private": true,
   "version": "0.0.1",
+  "author": {
+    "name": "Thanh Hoang-Minh",
+    "email": "hmthanhgm@gmail.com",
+    "url": "https://hmthanh.github.io"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^4.4.5"
+    "preview": "vite preview",
+    "postinstall": "npx husky install && npx playwright install",
+    "clean:dist": "npx rimraf dist",
+    "clean:report": "npx rimraf playwright-report",
+    "test:chrome": "npx playwright test --headed --project=chromium",
+    "test:firefox": "npx playwright test --headed --project=firefox",
+    "test:safari": "npx playwright test --headed --project=webkit",
+    "lint": "npx eslint --ext js ./src",
+    "lint:fix": "npx eslint --ext js ./src --fix"
   },
   "dependencies": {
-    "three": "^0.156.1"
+    "three": "^0.156.1",
+    "@vitejs/plugin-legacy": "^4.1.1"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9",
+    "@builder.io/partytown": "^0.8.1",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@playwright/test": "^1.38.1",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-sonarjs": "^0.21.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.30",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "sass": "^1.68.0",
+    "tailwindcss": "^3.3.3",
+    "terser": "^5.20.0",
+    "vite-plugin-glsl": "^1.1.2"
   }
 }
